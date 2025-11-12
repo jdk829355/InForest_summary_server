@@ -1,0 +1,10 @@
+./__pycache__/
+./.gradio/
+./lib/
+./share/
+./.env/
+./.gitignore
+./dockerfile
+./docker-compose.yml
+./README.md
+./test.py

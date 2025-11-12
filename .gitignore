@@ -1,0 +1,9 @@
+.env
+__pycache__/
+.gradio/
+bin/
+lib/
+redis/
+share/
+.DS_Store
+CACHEDIR.TAG
