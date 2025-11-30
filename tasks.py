@@ -8,7 +8,7 @@ import time
 
 
 uri = os.getenv("NEO4J_URI")
-user = os.getenv("NEO4J_USER")
+user = os.getenv("NEO4J_USERNAME")
 password = os.getenv("NEO4J_PASSWORD")
 
 
@@ -81,6 +81,7 @@ def summarize(tree_id, url):
         # Neo4j에 요약본 저장
         update_neo4j_with_summary(tree_id, result)
     except Exception as e:
+        setStatus(redis_conn, tree_id, TaskStatus.FAILED)
         raise e
     status.pop()
     setStatus(redis_conn, tree_id, TaskStatus.COMPLETED)

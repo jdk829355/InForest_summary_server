@@ -35,6 +35,10 @@ print("Redis Options:", redis_options)
 redis_conn = Redis(**redis_options)
 queue = Queue(connection=redis_conn)
 
+@app.get('/')
+def welcome_root_get():
+    return {"message": "Welcome to the Task Queue API"}
+
 @app.post('/task')
 def welcome_root(req: TaskRequest):
     # 이미 작업큐에 등록된 상태인지 확인
